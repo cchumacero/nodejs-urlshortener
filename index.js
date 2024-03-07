@@ -1,10 +1,9 @@
 import express, { json } from 'express' // require -> commonJS
 import cors from 'cors'
-import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import dotenv from 'dotenv'
 import './database.js'
-import { shorturlRouter} from './routes/shorturl.js'
+import { shorturlRouter } from './routes/shorturl.js'
 dotenv.config()
 
 // Basic Configuration
@@ -17,7 +16,7 @@ app.use(json())
 app.disable('x-powered-by')
 
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
@@ -26,12 +25,12 @@ app.use(bodyParser.urlencoded({
 }))
 
 // Your first API endpoint
-app.get('/api/hello', function(req, res) {
+app.get('/api/hello', function (req, res) {
   res.json({ greeting: 'hello API' });
 });
 
 app.use('/api/shorturl', shorturlRouter)
 
-app.listen(port, function() {
+app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
