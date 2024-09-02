@@ -1,4 +1,4 @@
-import { ShortUrlModel, Url } from '../models/mongodb/shorturl.js';
+import { ShortUrlModel } from '../models/postgresql/shorturl.js';
 import isUrl from 'is-url'
 
 export const getUrl = async (req, res) => {
@@ -20,22 +20,6 @@ export const getUrl = async (req, res) => {
         original_url: newShortUrl.original_url,
         short_url: newShortUrl.short_url
         })
-    
-    /*
-    const count = await Url.countDocuments()
-
-    const newUrl = new Url({
-        original_url: url,
-        short_url: count + 1
-    })
-    
-    newUrl.save().then((savedUrl) => {
-        res.json({
-            original_url: savedUrl.original_url,
-            short_url: savedUrl.short_url
-        })
-    })
-        */
 
 }
 

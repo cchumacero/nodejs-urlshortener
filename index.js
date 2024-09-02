@@ -2,7 +2,7 @@ import express, { json } from 'express' // require -> commonJS
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import dotenv from 'dotenv'
-import './database.js'
+//import './database.js'
 import { shorturlRouter } from './routes/shorturl.js'
 dotenv.config()
 
